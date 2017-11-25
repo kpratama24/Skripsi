@@ -18,7 +18,7 @@
 \makeatletter
 \renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
 \renewcommand{\thispagestyle}[1]{}
-\markright{\textbf{\textsc{Laporan Perkembangan Pengerjaan Skripsi\textemdash Sem. Genap 2015/2016}}}
+\markright{\textbf{\textsc{Laporan Perkembangan Pengerjaan Skripsi\textemdash Sem. Ganjil 2017/2018}}}
 
 \onehalfspacing
  
@@ -73,43 +73,221 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan 
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil : \newline } 
 		(a) {\it Real Time System}\newline
-        {\it Real-time System} adalah sistem yang harus menghasilkan respon yang tepat dalam batas waktu yang telah ditentukan. Jika respon komputer melewati batas waktu yang sudah ditentukan, maka akan terjadi degradasi performansi atau kegagalan sistem. Berdasarkan batas waktu yang dimilikinya, {\it Real-time System} dibagi atas 2 bagian besar yaitu :
-		    \begin{enumerate}
-		        \item {\it Hard Real-Time}
-		        \item {\it Soft Real-Time}
-		    \end{enumerate}
-		Sistem {\it Hard Real-Time} dibutuhkan untuk menyelesaikan {\it critical task} dengan jaminan waktu tertentu. Jika kebutuhan waktu tidak terpenuhi, maka aplikasi akan gagal. Dalam definisi lain disebutkan bahwa kontrol {\it hard real-time} dapat mentoleransi keterlambatan tidak lebih dari 100 mikro detik. Secara umum, sebuah proses di kirim dengan sebuah pernyataan jumlah waktu dimana dibutuhkan untuk menyelesaikan atau menjalankan {\it I/O}.\newline \newline
-		Berbeda dengan {\it Soft Real-time}, sistem ini memiliki sedikit kelonggaran. Dalam sistem ini,proses yang kritis menerima prioritas lebih daripada yang lain. Walaupun menambah fungsi {\it soft real-time} ke sistem {\it time sharing} mungkin akan mengakibatkan ketidakadilan pembagian sumber daya dan mengakibatkan {\it delay} yang lebih lama, atau mungkin menyebabkan {\it starvation}, hasilnya adalah tujuan secara umum sistem yang dapat mendukung multimedia, grafik berkecepatan tinggi, dan variasi tugas yang tidak dapat diterima di lingkungan yang tidak mendukung komputasi {\it soft real-time}.
+        {\it Real-time System} adalah sistem yang harus menghasilkan respon yang tepat dalam batas waktu yang telah ditentukan. Jika respon komputer melewati batas waktu yang sudah ditentukan, maka akan terjadi degradasi performansi atau kegagalan sistem. Berdasarkan batas waktu yang dimilikinya, {\it Real-time System} dibagi atas 2 bagian besar yaitu :\newline
+        1. {\it Hard Real-Time}\newline
+        2. {\it Soft Real-Time}\newline\newline
+		Sistem {\it Hard Real-Time} dibutuhkan untuk menyelesaikan {\it critical task} dengan jaminan waktu tertentu. Jika kebutuhan waktu tidak terpenuhi, maka sistem akan gagal. Dalam definisi lain disebutkan bahwa kontrol {\it hard real-time} dapat mentoleransi keterlambatan tidak lebih dari 100 mikrodetik. Secara umum, sebuah pekerjaan dikirim dengan sebuah pernyataan jumlah waktu dimana dibutuhkan untuk menyelesaikan atau menjalankan I/O. Dalam arti khusus, jumlah waktu yang diterima oleh sistem akan dicatat dan ditentukan penjadwalannya sesuai dengan batas waktu pengerjaan masing-masing pekerjaan.\newline \newline
+		Berbeda dengan {\it Soft Real-time}, sistem ini memiliki sedikit kelonggaran. Dalam sistem ini,pekerjaan yang kritis menerima prioritas lebih daripada yang lain. Walaupun menambah fungsi {\it soft real-time} ke sistem {\it time sharing} mungkin akan mengakibatkan ketidakadilan pembagian sumber daya dan mengakibatkan {\it delay} yang lebih lama, atau mungkin menyebabkan {\it starvation}, hasilnya adalah tujuan secara umum sistem yang dapat mendukung multimedia, grafik berkecepatan tinggi, dan variasi tugas yang tidak dapat diterima di lingkungan yang tidak mendukung komputasi {\it soft real-time}.
 		\newline \newline \newpage
 		
-		(b) Contoh {\it Real Time System} dan implementasinya \newline
+		(b) Implementasi dan contoh {\it Real Time System}  \newline
 		{\it Real Time System} mempunyai 4 elemen penting, yaitu proses/{\it job}, {\it Arrival Time}, {\it Burst Time}, dan {\it Ending Deadline}. Proses adalah elemen pekerjaan yang akan dikerjakan oleh sistem {\it Real Time}, sedangkan {\it Arrival Time} adalah waktu kedatangan dari sebuah proses ke dalam antrian pekerjaan dari sistem {\it Real Time}, {\it Burst Time} adalah waktu yang dibutuhkan oleh sistem untuk mengerjakan sebuah proses yang masuk, dan {\it Ending Deadline} adalah batas waktu yang diberikan oleh sistem untuk mengerjakan semua proses yang masuk.\newline
-		Hasil dari pengerjaan semua proses tersebut akan direpresentasikan dalam bentuk {\it Gantt Chart}. {\it Gantt Chart} adalah sebuah tipe chart yang mengilustrasikan sebuah penjadwalan kerja. {\it Gantt Chart} mengilustrasikan waktu mulai dan waktu selesai dari sebuah element dari proyek. Di dalam kasus {\it Real-time System, Gantt Chart} dapat digunakan untuk menunjukkan status dari sebuah pekerjaan menggunakan sebuah garis vertikal. \newline
+		Contoh dari implementasi keempat elemen penting tersebut adalah sebagai berikut : \newline
 		\begin{center}
-		
-        Contoh Gantt Chart (Sumber : {\it Google Images})
-        \begin{figure}
+        \begin{figure}[!htbp]
             \centering
-            \includegraphics[scale=0.3]{gantt-chart.jpg}
-            \caption{Contoh Implementasi Gantt Chart}
-            \label{Gantt Chart}
+            \includegraphics[scale=0.3]{arrivaldeadlineexeccution.png}
+            \caption{Penjadwalan {\it real time Round Robin}}
+            \label{}
         \end{figure}
 		\end{center}
-		Salah satu contoh dari penggunaan {\it Real Time System} adalah pada alat Seismograf. Seismograf adalah sebuah alat yang berfungsi untuk mengukur dan mencatat data dari sebuah gempa bumi. Data yang tercatat akan direpresentasikan sebagai sebuah grafik yang nantinya akan diukur menggunakan pengukuran Skala bernama {\it Skala Richter}. Seismograf adalah salah satu alat yang menggunakan prinsip {\it Real Time System}. Hal ini dikarenakan Seismograf tidak diperbolehkan untuk sedikit saja melakukan {\it delaying} pada saat pengambilan data yang dapat menyebabkan kegagalan manusia dalam memprediksi potensi gempa bumi berdasarkan data yang diberikan oleh Seismograf tersebut. Hal ini adalah salah satu implementasi dari sistem {\it Hard Real Time} dimana Seismograf dibutuhkan untuk menyelesaikan sebuah pekerjaan yang sangat penting dengan jaminan waktu tertentu, dan jika waktu yang diberikan tidak terpenuhi maka seismograf tersebut terhitung gagal. \newpage
+		Tabel diatas menampilkan data hasil dari pengerjaan sebuah sistem {\it real time} yang mengurutkan dan mengerjakan pekerjaan yang ada dengan menggunakan metode penjadwalan {\it Round Robin}. Metode ini akan memberikan porsi {\it resource} CPU yang sama rata pada setiap pekerjaan yang masuk dan mengerjakan pekerjaan yang ada tanpa melihat waktu eksekusi atau {\it burst time} dan {\it deadline} dari masing-masing pekerjaan yang masuk.\newline
+	
+		Salah satu contoh dari penggunaan {\it real time system} adalah pada alat seismograf. Seismograf adalah sebuah alat yang berfungsi untuk mengukur dan mencatat data dari sebuah gempa bumi. Data yang tercatat akan direpresentasikan sebagai sebuah grafik yang nantinya akan diukur menggunakan pengukuran Skala bernama {\it skala richter}. Seismograf adalah salah satu alat yang menggunakan prinsip {\it real time system}. Hal ini dikarenakan seismograf tidak diperbolehkan untuk sedikit saja melakukan {\it delaying} pada saat pengambilan data yang dapat menyebabkan kegagalan manusia dalam memprediksi potensi gempa bumi berdasarkan data yang diberikan oleh seismograf tersebut. Hal ini adalah salah satu implementasi dari sistem {\it hard real time} dimana seismograf dibutuhkan untuk menyelesaikan sebuah pekerjaan yang sangat penting dengan jaminan waktu tertentu, dan jika waktu yang diberikan tidak terpenuhi maka seismograf tersebut terhitung gagal.\newpage
+		\begin{center}
+        \begin{figure}
+            \centering
+            \includegraphics[scale=0.3]{seismogram.jpg}
+            \caption{Seismogram}
+            \label{}
+        \end{figure}
+		\end{center}
+		
+		Gambar diatas adalah salah satu contoh hasil data grafik yang dihasilkan oleh seismograf dan dinamakan seismogram. Seismogram adalah rekaman gerakan tanah yang berupa grafis aktivitas bumi. Seperti yang sudah dijelaskan diatas, grafik ini bersifat sangat peka waktu sehingga dapat dimasukkan ke dalam kategori sistem peka waktu.
+		
+		(c) {\it Gantt Chart}\newline
+		Hasil dari pengerjaan sebuah proses dalam suatu sistem akan direpresentasikan dalam bentuk {\it Gantt Chart}. {\it Gantt Chart} adalah sebuah tipe chart yang mengilustrasikan sebuah penjadwalan kerja. {\it Gantt Chart} mengilustrasikan waktu mulai dan waktu selesai dari sebuah element dari proyek. Di dalam kasus {\it Real-time System, Gantt Chart} dapat digunakan untuk menunjukkan status dari sebuah pekerjaan menggunakan sebuah garis vertikal.
+% 		\begin{center}
+%         \begin{figure}[!htbp]
+%             \centering
+%             \includegraphics[scale=0.3]{gantt-chart.jpg}
+%             \caption{Contoh Implementasi Gantt Chart}
+%             \label{}
+%         \end{figure}
+% 		\end{center}
+		
+		\newpage
 		
 		(d) Algoritma {\it Earliest Deadline First}\newline
-		{\it Earliest Deadline First} adalah algoritma penjadwalan dinamis yang digunakan pada {\it Real Time System} untuk menempatkan proses dalam sebuah {\it Priority Queue}. Apabila ada penjadwalan baru yang muncul, maka {\it Queue} akan mencari proses dengan tenggat waktu ({\it Deadline}) paling dekat untuk selanjutnya akan dieksekusi terlebih dahulu. \newline
-		EDF memiliki algoritma penjadwalan yang optimal pada {\it uniprocessor preemptive}, dalam artian jika terdapat kumpulan pekerjaan independen, yang masing-masing mempunyai {\it Arrival Time dan Tenggat Waktu}, maka EDF akan menjadwalkannya agar mereka dapat diselesaikan sesuai dengan Tenggat Waktu mereka.\newline
-		Logika dari EDF dapat dilihat pada sumber kode berikut :
+		{\it Earliest deadline first} adalah algoritma penjadwalan dinamis yang digunakan pada {\it real time system} untuk menempatkan pekerjaan dalam sebuah {\it priority queue}. Apabila ada penjadwalan baru yang muncul, maka {\it queue} akan mencari pekerjaan dengan tenggat waktu ({\it deadline}) paling dekat untuk selanjutnya akan dieksekusi terlebih dahulu. \newline
+		EDF memiliki algoritma penjadwalan yang optimal pada {\it uniprocessor preemptive}, dalam artian jika terdapat kumpulan pekerjaan independen, yang masing-masing mempunyai {\it arrival time dan tenggat waktu}, maka EDF akan menjadwalkannya agar mereka dapat diselesaikan sesuai dengan tenggat waktu mereka. Penjelasan lebih detilnya adalah sebagai berikut :\newline
+		Jika sebagai contoh, diketahui bahwa 2 buah pekerjaan (pekerjaan A dan pekerjaan B) yang ada di dalam sebuah sistem peka waktu memiliki waktu kedatangan yang sama dan batas waktu yang berbeda dimana B memiliki batas waktu yang lebih sedikit dibandingkan dengan A, maka sistem akan meningkatkan prioritas pekerjaan B agar dapat dikerjakan terlebih dahulu. Asumsi dari contoh ini adalah bahwa deadline yang ditetapkan oleh pekerjaan A dan B bersifat absolut yang berarti tidak akan berubah selama kedua pekerjaan tersebut berada di dalam sistem.\newline
+		Dengan demikian, algoritma EDF dapat dirumuskan sebagai berikut :\newline
+		\begin{lstlisting}
+let a = array of task in priority queue with absolute deadline
+let newB = new task with absolute deadline
+for i=0 till length of a
+    if deadline of newB < a[i]
+    add newB before a[i]
+    move a[i] to a[i+1] 
+		\end{lstlisting}
+		
+		\newpage
 		
 		\item \textbf{Analisis Real Time System dan Algoritma Earliest Deadline First}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil : }\newline
-		Analisis sudah dilakukan dengan melihat cara kerja dari kode program yang mengimplementasikan metode penjadwalan {\it Shortest Remaining Time First}. Metode ini diambil karena cara kerjanya hampir sama dengan algoritma {\it Earliest Deadline First}, dimana pekerjaan dengan batas waktu penyelesaian yang paling rendah akan dieksekusi terlebih dahulu oleh {\it Real Time System} yang menjalankannya. 
+		Analisis sudah dilakukan dengan melihat cara kerja dari kode program yang mengimplementasikan metode penjadwalan {\it shortest remaining time first}. Metode ini diambil karena cara kerjanya hampir sama dengan algoritma {\it Earliest Deadline First}, dimana pekerjaan dengan batas waktu penyelesaian yang paling rendah akan dieksekusi terlebih dahulu oleh {\it real time system} yang menjalankannya. Program yang dianalisis adalah milik salah satu alumni Informatika UNPAR. {\it Detail} dari program ini adalah sebagai berikut : \newline
+		1. Program mempunyai 2 kelas utama yaitu kelas SRTFGUI.java dan SRTFThread.java\newline
+		2. SRTFGUI.java berfungsi untuk menampilkan antarmuka dari program yang dibuat. Kelas ini mempunyai beberapa {\it method} yang di-{\it generate} oleh pustaka milik bahasa  pemrograman {\it Java}. Adapun {\it method} yang dibuat sendiri adalah sebagai berikut (beserta penjelasannya):\newline
+		\begin{lstlisting}[language=Java]
+private void startButtonActionPerformed
+(java.awt.event.ActionEvent evt) 
+if(t!=null) { t.stop(); }
+awtTF.setText(""); //mengosongkan text field average waiting time
+attTF.setText(""); //mengosongkan text field average turnaround time
+        
+timeTF.setText("0"); // melakukan resetting pada text field waktu
+String s = inputTA.getText(); //mengambil input dari pengguna
+String[] ss = s.split("\n"); // memasukkan input pengguna ke dalam sebuah array
+int n = Integer.parseInt(ss[0]); //mengambil input user berupa
+//jumlah proses yang akan dieksekusi
+t = new SRTFThread(this,n); // inisialisasi thread SRTF dengan jumlah proses N
+        
+String[] proses; 
+for (int i = 0; i < n; i++) {
+proses = ss[i+1].split(" ");
+t.addProcess(proses[0], Integer.parseInt(proses[1]), Integer.parseInt(proses[2]));
+}//iterasi for diatas menambahkan proses sesuai //dengan jumlah proses dari masukan pengguna
+        
+setName();//menetapkan nama proses
+t.start();//mengeksekusi thread
+}
+
+/**
+* method ini akan memberi nama setiap proses
+* yang akan diproses
+*/
+public void setName() {
+Process[] p = t.getProcess();
+String s = "";
+for (int i = 0; i < p.length; i++) {
+s += p[i].name + " --> " + String.format("%3d",i+1) + "\n";
+}
+        
+nameTA.setText(s);
+}
+    
+/**
+* method ini akan menampilkan hasil dari eksekusi
+* dari program penjadwalan SRTF ini
+*/
+public void show(Process[] process) {
+    String s = "";
+    int length = process.length-1;
+    for (int i = 0; i < length; i++) {
+        s += String.format("%3d",i+1) + ": " + process[i].s + "\n";
+        }
+    s += String.format("%3d",length+1) + ": " + process[length].s;
+        
+    outputTA.setText(s);
+    }
+    
+    /**
+    * method ini akan menampilkan waktu yang sudah
+    * dipakai untuk melakukan penjadwalan sesuai 
+    * dengan masukan proses dari pengguna
+    */
+    public void showTime(int time) {
+        timeTF.setText(time+"");
+    }
+    
+public void finish(double awt, double att) {
+awtTF.setText(String.format("%.5f",awt)); //mengeluarkan average waiting time
+attTF.setText(String.format("%.5f",att));// mengeluarkan average turnaroundtime
+}
+		\end{lstlisting}
+		3. SRTFThread.java adalah kelas untuk mengimplementasikan logika dari penjadwalan SRTF. Kelas ini mempunyai beberapa sub kelas yaitu :{\it 
+		\begin{itemize}
+		\item Process
+		\item ArrivalProcessComparator
+		\item ProcessComparator
+		\end{itemize}
+		}
+		Kelas {\it Process} berfungsi untuk menyimpan {\it id}, nama , waktu kedatangan, dan waktu pengerjaan dari sebuah pekerjaan, kelas {\it ArrivalProcessComparator} berfungsi untuk melakukan pemeriksaan waktu kedatangan dari 2 pekerjaan yang berbeda, dan kelas {\it ProcessComparator} berfungsi untuk membandingkan {\it burst time} dari 2 pekerjaan yang berbeda.\newpage
+		3. Beberapa method penting dari kelas SRTFThread beserta penjelasannya adalah sebagai berikut :\newline
+		\begin{lstlisting}[language=Java]
+		
+	class ArrivalProcessComparator implements Comparator<Process> {
+	/**
+	* Mengecek waktu kedatangan 2 proses
+	* @return 1 jika waktu kedatangan p1 lebih 
+	* besar dari kedatangan p2 atau jika burst time 
+	* p1 lebih besar daripada p2
+	* @return -1 jika sebaliknya
+	*/
+	@Override
+    public int compare(Process p1, Process p2) {
+        if(p1.arrivalTime<p2.arrivalTime) {
+            return -1; 
+        } else if(p1.arrivalTime>p2.arrivalTime) {
+            return 1;
+        } else {
+            if(p1.burstTime<p2.burstTime) {
+                return -1;
+            } else if(p1.burstTime>p2.burstTime) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+    }
+}
+
+/**
+* Membandingkan burst time dari 2 proses yang berbeda
+* @return 1 jika burst time p1 lebih besar dari burst
+* time p2
+* @return -1 jika sebaliknya
+* @return 0 jika tidak memasuki kondisi keduanya
+*/
+class ProcessComparator implements Comparator<Process> {
+
+    @Override
+    public int compare(Process p1, Process p2) {
+        if(p1.burstTime<p2.burstTime) {
+            return -1;
+        } else if(p1.burstTime>p2.burstTime) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+}
+		\end{lstlisting}
+		4. Setelah dijalankan program ini menampikan antarmuka sebagai berikut :
 		\begin{center}
-		\includegraphics[scale=0.5]{Shortest_remaining_time.png}\newline
-		Penjadwalan dengan SRTF (Sumber : Wikipedia )
+        \begin{figure}[!htbp]
+            \centering
+            \includegraphics[scale=0.4]{SRTF1.png}
+            \caption{Antarmuka program sebelum penjadwalan dieksekusi}
+            \label{}
+        \end{figure}
 		\end{center}
+		
+		Kolom masukan yang ada dalam antarmuka tersebut secara otomatis terisi sesuai dengan {\it test case} yang diberikan pada spesifikasi tugas kuliah pada saat program ini dibuat. Setelah tombol {\it start} ditekan, maka penjadwalan dimulai dan menghasilkan keluaran seperti gambar berikut:
+		\begin{center}
+        \begin{figure}[!htbp]
+            \centering
+            \includegraphics[scale=0.4]{SRTF2.png}
+            \caption{Antarmuka program setelah dieksekusi}
+            \label{}
+        \end{figure}
+		\end{center} \newpage
+		{\it Text field output} akan mengeluarkan hasil dari proses penjadwalan yang dilakukan. {\it Text field information} akan menampilkan nama dari proses yang masuk untuk selanjutnya dapat diidentifikasi di {\it Text field output}. Program juga akan mengeluarkan {\it average waiting time} dan {\it average turnaround time} berdasarkan masukan dari pengguna.\newline \newline
+		
+		Dengan demikian, program ini dapat menjadi acuan untuk selanjutnya saya dapat merancang perangkat lunak {\it real time system} dengan menggunakan algoritma {\it earliest deadline first} 
+		
 		\item \textbf{Merancang perangkat lunak dengan menggunakan algoritma {\it Earliest Deadline First}.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil : Progress belum ada} 
@@ -151,12 +329,7 @@ Keterangan (*)\\
 
 \section{Kendala yang dihadapi}
 %TULISKAN BAGIAN INI JIKA DOKUMEN ANDA TIPE A ATAU C
-Kendala - kendala yang dihadapi selama mengerjakan skripsi :
-\begin{itemize}
-	\item Terlalu banyak melakukan prokratinasi
-	\item Terlalu banyak godaan berupa hiburan (game, film, dll)
-	\item Mengambil beberapa proyek di luar kampus sehingga lebih banyak waktu terpakai untuk mengerjakan proyek tersebut
-\end{itemize}
+Kendala - kendala yang dihadapi selama mengerjakan skripsi : -
 
 \vspace{1cm}
 \centering Bandung, \tanggal\\
