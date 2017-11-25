@@ -3,7 +3,9 @@
 \usepackage[bahasa]{babel}
 \usepackage{graphicx}
 \usepackage{graphics}
+\graphicspath{ {images/} }
 \usepackage{float}
+\usepackage{listings}
 \usepackage[cm]{fullpage}
 \pagestyle{myheadings}
 \usepackage{etoolbox}
@@ -16,7 +18,7 @@
 \makeatletter
 \renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
 \renewcommand{\thispagestyle}[1]{}
-\markright{\textbf{\textsc{Laporan Perkembangan Pengerjaan Skripsi\textemdash Sem. Ganjil 2015/2016}}}
+\markright{\textbf{\textsc{Laporan Perkembangan Pengerjaan Skripsi\textemdash Sem. Genap 2015/2016}}}
 
 \onehalfspacing
  
@@ -25,22 +27,25 @@
 \title{\@judultopik}
 \author{\nama \textendash \@npm} 
 
-%ISILAH DATA DATA BERIKUT INI:
-\newcommand{\nama}{Lionov}
-\newcommand{\@npm}{1997730020}
-\newcommand{\tanggal}{01/01/1900} %Tanggal pembuatan dokumen
-\newcommand{\@judultopik}{Simulasi Kerumunan di Museum} % Judul/topik anda
-\newcommand{\kodetopik}{TAB0901}
+%ISILAH DATA BERIKUT INI:
+\newcommand{\nama}{Kevin Pratama}
+\newcommand{\@npm}{2014730073}
+\newcommand{\tanggal}{24/11/2017} %Tanggal pembuatan dokumen
+\newcommand{\@judultopik}{{\it Real Time Scheduling} dengan {\it Earliest Deadline First}} % Judul/topik anda
+\newcommand{\kodetopik}{ABS4301}
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
-\newcommand{\pembA}{Thomas Anung Basuki}
+\newcommand{\pembA}{Aditya Bagoes Saputra}
 \newcommand{\pembB}{-}
-\newcommand{\semesterPertama}{39 - Ganjil 15/16} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
+\newcommand{\semesterPertama}{43 - Ganjil 17/18} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
 \newcommand{\lamaSkripsi}{1} % Jumlah semester untuk mengerjakan skripsi s.d. dokumen ini dibuat
 \newcommand{\kulPertama}{Skripsi 1} % Kuliah dimana topik ini diambil pertama kali
 \newcommand{\tipePR}{B} % tipe progress report :
 % A : dokumen pendukung untuk pengambilan ke-2 di Skripsi 1
 % B : dokumen untuk reviewer pada presentasi dan review Skripsi 1
 % C : dokumen pendukung untuk pengambilan ke-2 di Skripsi 2
+
+% Dokumen hasil template ini harus dicetak bolak-balik !!!!
+
 \maketitle
 
 \pagenumbering{arabic}
@@ -64,45 +69,58 @@ Tipe Laporan : {\bf \tipePR} -
 \section{Detail Perkembangan Pengerjaan Skripsi}
 Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan terkahir :
 	\begin{enumerate}
-		\item Melakukan survei ke Museum Geologi Bandung untuk mendapatkan denah serta mengetahui perilaku pengunjung museum secara umum (arah perjalanan, kecepatan, lama melihat objek, dll).\\
-		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :} Survei sudah dilakukan sebanyak 3x pada tanggal X, Y dan Z. Pada kunjungan pertama, diperhaitkan denah museum dan dibuat sketsa berdasarkan pengamatan. Pada kunjunga kedua, bertemu dengan bagian humas museum dan berhasil mendapatkan denah serta melakukan wawancara. Hasil wawancara sudah dibuat dan ada softcopy-nya. Pada kunjungan ketiga, secara khusus dilihat perilaku pengunjung. Masih direncakanan 2x kunjungan lagi. Bukti-bukti kunjungan dapat dilihat di lampiran
+		\item \textbf{Studi pustaka mengenai Real Time System dan Algoritma Earliest Deadline First}\\
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
+		{\bf Hasil : \newline } 
+		(a) {\it Real Time System}\newline
+        {\it Real-time System} adalah sistem yang harus menghasilkan respon yang tepat dalam batas waktu yang telah ditentukan. Jika respon komputer melewati batas waktu yang sudah ditentukan, maka akan terjadi degradasi performansi atau kegagalan sistem. Berdasarkan batas waktu yang dimilikinya, {\it Real-time System} dibagi atas 2 bagian besar yaitu :
+		    \begin{enumerate}
+		        \item {\it Hard Real-Time}
+		        \item {\it Soft Real-Time}
+		    \end{enumerate}
+		Sistem {\it Hard Real-Time} dibutuhkan untuk menyelesaikan {\it critical task} dengan jaminan waktu tertentu. Jika kebutuhan waktu tidak terpenuhi, maka aplikasi akan gagal. Dalam definisi lain disebutkan bahwa kontrol {\it hard real-time} dapat mentoleransi keterlambatan tidak lebih dari 100 mikro detik. Secara umum, sebuah proses di kirim dengan sebuah pernyataan jumlah waktu dimana dibutuhkan untuk menyelesaikan atau menjalankan {\it I/O}.\newline \newline
+		Berbeda dengan {\it Soft Real-time}, sistem ini memiliki sedikit kelonggaran. Dalam sistem ini,proses yang kritis menerima prioritas lebih daripada yang lain. Walaupun menambah fungsi {\it soft real-time} ke sistem {\it time sharing} mungkin akan mengakibatkan ketidakadilan pembagian sumber daya dan mengakibatkan {\it delay} yang lebih lama, atau mungkin menyebabkan {\it starvation}, hasilnya adalah tujuan secara umum sistem yang dapat mendukung multimedia, grafik berkecepatan tinggi, dan variasi tugas yang tidak dapat diterima di lingkungan yang tidak mendukung komputasi {\it soft real-time}.
+		\newline \newline \newpage
 		
-		\item Melakukan analisis pada hasil survei terhadap pergerakan pengunjung di museum dan membuat rancangan denah di komputer yang dilengkapi dengan penghalang dan objek di museum.\\
-		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :}
-
-		\item Melakukan studi literatur mengenai sifat kolektif suatu kerumunan, teknik {\it social force model} dan teknik {\it flow tiles}\\
-		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :}
-
-		\item Mempelajari bahasa pemrograman C++ dan cara menggunakan framework OpenSteer\\
-		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :}
-
-		\item Merancang pergerakan kerumunan di dalam museum menggunakan teknik {\it social force model} dan {\it flow tiles} serta menggunakan teknik lainnya seperti konsep pathway dan waypoints. Selain itu, dirancang pula adanya waktu tunggu (pada saat pengunjung melihat objek di museum) dan cara pembuatan jalur bagi setiap individu pengunjung\\
-		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :}
-
-		\item Melakukan analisa dan merancang struktur data yang cocok untuk menyimpan penghalang (obstacle)\\
-		{\bf status :} dihapuskan/tidak dikerjakan \\
-		{\bf hasil :} berdasarkan analisis singkat, tidak dilakukan analisis lebih jauh karena tidak diperlukan struktur data baru, karena sudah disediakan oleh OpenSteer versi terbaru
-
-		\item Mengimplementasikan keseluruhan algoritma dan struktur data yang dirancang, dengan menggunakan framework OpenSteer \\
-		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :}
-
-		\item Melakukan pengujian (dan eksperimen) yang melibatkan responde untuk menilai hasil simulasi secara kualitatif\\
-		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :}
-
-		\item Menulis dokumen skripsi\\
-		{\bf status :} Ada sejak rencana kerja skripsi.\\
-		{\bf hasil :} \lipsum[1]
+		(b) Contoh {\it Real Time System} dan implementasinya \newline
+		{\it Real Time System} mempunyai 4 elemen penting, yaitu proses/{\it job}, {\it Arrival Time}, {\it Burst Time}, dan {\it Ending Deadline}. Proses adalah elemen pekerjaan yang akan dikerjakan oleh sistem {\it Real Time}, sedangkan {\it Arrival Time} adalah waktu kedatangan dari sebuah proses ke dalam antrian pekerjaan dari sistem {\it Real Time}, {\it Burst Time} adalah waktu yang dibutuhkan oleh sistem untuk mengerjakan sebuah proses yang masuk, dan {\it Ending Deadline} adalah batas waktu yang diberikan oleh sistem untuk mengerjakan semua proses yang masuk.\newline
+		Hasil dari pengerjaan semua proses tersebut akan direpresentasikan dalam bentuk {\it Gantt Chart}. {\it Gantt Chart} adalah sebuah tipe chart yang mengilustrasikan sebuah penjadwalan kerja. {\it Gantt Chart} mengilustrasikan waktu mulai dan waktu selesai dari sebuah element dari proyek. Di dalam kasus {\it Real-time System, Gantt Chart} dapat digunakan untuk menunjukkan status dari sebuah pekerjaan menggunakan sebuah garis vertikal. \newline
+		\begin{center}
 		
-		\item Mempelajari cara menggunakan fitur manipulasi obstacle yang disediakan oleh framework Opensteer versi terbaru\\
-		{\bf status :} baru ditambahkan pada semester ini\\
-		{\bf hasil :} baru direncanakan karena framework Opensteer versi paling akhir baru selesai diinstall dan dilihat-lihat bagian contoh-contoh simulasinya
+        Contoh Gantt Chart (Sumber : {\it Google Images})
+        \begin{figure}
+            \centering
+            \includegraphics[scale=0.3]{gantt-chart.jpg}
+            \caption{Contoh Implementasi Gantt Chart}
+            \label{Gantt Chart}
+        \end{figure}
+		\end{center}
+		Salah satu contoh dari penggunaan {\it Real Time System} adalah pada alat Seismograf. Seismograf adalah sebuah alat yang berfungsi untuk mengukur dan mencatat data dari sebuah gempa bumi. Data yang tercatat akan direpresentasikan sebagai sebuah grafik yang nantinya akan diukur menggunakan pengukuran Skala bernama {\it Skala Richter}. Seismograf adalah salah satu alat yang menggunakan prinsip {\it Real Time System}. Hal ini dikarenakan Seismograf tidak diperbolehkan untuk sedikit saja melakukan {\it delaying} pada saat pengambilan data yang dapat menyebabkan kegagalan manusia dalam memprediksi potensi gempa bumi berdasarkan data yang diberikan oleh Seismograf tersebut. Hal ini adalah salah satu implementasi dari sistem {\it Hard Real Time} dimana Seismograf dibutuhkan untuk menyelesaikan sebuah pekerjaan yang sangat penting dengan jaminan waktu tertentu, dan jika waktu yang diberikan tidak terpenuhi maka seismograf tersebut terhitung gagal. \newpage
+		
+		(d) Algoritma {\it Earliest Deadline First}\newline
+		{\it Earliest Deadline First} adalah algoritma penjadwalan dinamis yang digunakan pada {\it Real Time System} untuk menempatkan proses dalam sebuah {\it Priority Queue}. Apabila ada penjadwalan baru yang muncul, maka {\it Queue} akan mencari proses dengan tenggat waktu ({\it Deadline}) paling dekat untuk selanjutnya akan dieksekusi terlebih dahulu. \newline
+		EDF memiliki algoritma penjadwalan yang optimal pada {\it uniprocessor preemptive}, dalam artian jika terdapat kumpulan pekerjaan independen, yang masing-masing mempunyai {\it Arrival Time dan Tenggat Waktu}, maka EDF akan menjadwalkannya agar mereka dapat diselesaikan sesuai dengan Tenggat Waktu mereka.\newline
+		Logika dari EDF dapat dilihat pada sumber kode berikut :
+		
+		\item \textbf{Analisis Real Time System dan Algoritma Earliest Deadline First}\\
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
+		{\bf Hasil : }\newline
+		Analisis sudah dilakukan dengan melihat cara kerja dari kode program yang mengimplementasikan metode penjadwalan {\it Shortest Remaining Time First}. Metode ini diambil karena cara kerjanya hampir sama dengan algoritma {\it Earliest Deadline First}, dimana pekerjaan dengan batas waktu penyelesaian yang paling rendah akan dieksekusi terlebih dahulu oleh {\it Real Time System} yang menjalankannya. 
+		\begin{center}
+		\includegraphics[scale=0.5]{Shortest_remaining_time.png}\newline
+		Penjadwalan dengan SRTF (Sumber : Wikipedia )
+		\end{center}
+		\item \textbf{Merancang perangkat lunak dengan menggunakan algoritma {\it Earliest Deadline First}.}\\
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
+		{\bf Hasil : Progress belum ada} 
+		
+		\item \textbf{Merancang perangkat lunak untuk mengimplementasikan {\it Real Time System} dengan menggunakan algoritma {\it Earliest Deadline First}}
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
+		{\bf Hasil : Progress belum ada} 
+		
+		\item \textbf{Menulis dokumen skripsi}\\
+		{\bf Status :} Ada sejak rencana kerja skripsi\\
+		{\bf Hasil : Menulis Bab 1, 2 , dan bab 3 (belum lengkap)} 
 		
 
 	\end{enumerate}
@@ -114,17 +132,12 @@ Persentase penyelesaian skripsi sampai dengan dokumen ini dibuat dapat dilihat p
   \begin{tabular}{ | c | c | c | c | l | c |}
     \hline
     1*  & 2*(\%) & 3*(\%) & 4*(\%) &5* &6*(\%)\\ \hline \hline
-    1   & 5  & 5  &  &  & 3 \\ \hline
-    2   & 5 & 5  &   &  & 3 \\ \hline
-    3   & 10  & 7  & 3 & {\footnotesize sebagian kecil teknik {\it flow tiles} di S2} & 5 \\ \hline
-    4   & 15  & 10  &  5 & {\footnotesize teknik lanjut OOP di C++ di S2} & 12 \\ \hline
-    5   & 20  & 5  & 15 & {\footnotesize perancangan awal SFM, pathway dan waypoint di S1} & 5 \\ \hline
-    6   & 0 &   & 0  &  {\footnotesize dihapus karena tidak diperlukan} & \\\hline
-    7   & 20  & 5  & 15 &  {\footnotesize implementasi denah dan rancangan awal SFM di S1} & 3 \\ \hline
-    8   & 5  &   &  5  &  &\\ \hline
-    9   & 15  & 3  & 12  & {\footnotesize sebagian bab 1 dan 2, serta bagian awal analisis di S1} & 5\\ \hline
-    10   & 5  &   & 5  & {\footnotesize tambahan baru} &\\ \hline
-    Total  & 100  & 40  & 60 &  & 36\\ \hline
+    1   & 20  & 20  &  &  & 20 \\ \hline
+    2   & 20 & 20  &   &  & 20 \\ \hline
+    3   & 15  &   & 15 &  & 0 \\ \hline
+    4   & 25  &   &  25 &  & 0 \\ \hline
+    5   & 20  & 5  & 15 &  & 3 \\ \hline
+    Total  & 100  & 40  & 60 &  & 43\\ \hline
                           \end{tabular}
 \end{center}
 
@@ -134,7 +147,7 @@ Keterangan (*)\\
 3 : Persentase yang akan diselesaikan di Skripsi 1 \\
 4 : Persentase yang akan diselesaikan di Skripsi 2 \\
 5 : Penjelasan singkat apa yang dilakukan di S1 (Skripsi 1) atau S2 (skripsi 2)\\
-6 : Persentase yang sidah diselesaikan sampai saat ini 
+6 : Persentase yang sudah diselesaikan sampai saat ini 
 
 \section{Kendala yang dihadapi}
 %TULISKAN BAGIAN INI JIKA DOKUMEN ANDA TIPE A ATAU C
@@ -142,8 +155,7 @@ Kendala - kendala yang dihadapi selama mengerjakan skripsi :
 \begin{itemize}
 	\item Terlalu banyak melakukan prokratinasi
 	\item Terlalu banyak godaan berupa hiburan (game, film, dll)
-	\item Skripsi diambil bersamaan dengan kuliah ASD karena selama 5 semester pertama kuliah tersebut sangat dihindari dan tidak diambil, dan selama 4 semester terakhir kuliah tersebut selalu mendapat nilai E
-	\item Mengalami kesulitan pada saat sudah mulai membuat program komputer karena selama ini selalu dibantu teman
+	\item Mengambil beberapa proyek di luar kampus sehingga lebih banyak waktu terpakai untuk mengerjakan proyek tersebut
 \end{itemize}
 
 \vspace{1cm}
@@ -168,6 +180,5 @@ Menyetujui, \\
 % \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
 \vspace{2cm} Nama: \pembA \\ Pembimbing Tunggal
 }
-
 \end{document}
 
