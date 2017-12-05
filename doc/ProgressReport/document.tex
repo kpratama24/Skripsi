@@ -30,7 +30,7 @@
 %ISILAH DATA BERIKUT INI:
 \newcommand{\nama}{Kevin Pratama}
 \newcommand{\@npm}{2014730073}
-\newcommand{\tanggal}{24/11/2017} %Tanggal pembuatan dokumen
+\newcommand{\tanggal}{27/11/2017} %Tanggal pembuatan dokumen
 \newcommand{\@judultopik}{{\it Real Time Scheduling} dengan {\it Earliest Deadline First}} % Judul/topik anda
 \newcommand{\kodetopik}{ABS4301}
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
@@ -67,9 +67,9 @@ Tipe Laporan : {\bf \tipePR} -
 		}
 
 \section{Detail Perkembangan Pengerjaan Skripsi}
-Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan terkahir :
+Detail bagian pekerjaan skripsi sesuai dengan rencana kerja/laporan perkembangan terakhir :
 	\begin{enumerate}
-		\item \textbf{Studi pustaka mengenai Real Time System dan Algoritma Earliest Deadline First}\\
+		\item \textbf{Studi pustaka mengenai {\it Real Time System }dan Algoritma {\it Earliest Deadline First}}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil : \newline } 
 		(a) {\it Real Time System}\newline
@@ -84,14 +84,14 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan 
 		{\it Real Time System} mempunyai 4 elemen penting, yaitu proses/{\it job}, {\it Arrival Time}, {\it Burst Time}, dan {\it Ending Deadline}. Proses adalah elemen pekerjaan yang akan dikerjakan oleh sistem {\it Real Time}, sedangkan {\it Arrival Time} adalah waktu kedatangan dari sebuah proses ke dalam antrian pekerjaan dari sistem {\it Real Time}, {\it Burst Time} adalah waktu yang dibutuhkan oleh sistem untuk mengerjakan sebuah proses yang masuk, dan {\it Ending Deadline} adalah batas waktu yang diberikan oleh sistem untuk mengerjakan semua proses yang masuk.\newline
 		Contoh dari implementasi keempat elemen penting tersebut adalah sebagai berikut : \newline
 		\begin{center}
-        \begin{figure}[!htbp]
+        \begin{table}[!htbp]
             \centering
-            \includegraphics[scale=0.3]{arrivaldeadlineexeccution.png}
             \caption{Penjadwalan {\it real time Round Robin}}
+            \includegraphics[scale=0.3]{arrivaldeadlineexeccution.png}
             \label{}
-        \end{figure}
+        \end{table}
 		\end{center}
-		Tabel diatas menampilkan data hasil dari pengerjaan sebuah sistem {\it real time} yang mengurutkan dan mengerjakan pekerjaan yang ada dengan menggunakan metode penjadwalan {\it Round Robin}. Metode ini akan memberikan porsi {\it resource} CPU yang sama rata pada setiap pekerjaan yang masuk dan mengerjakan pekerjaan yang ada tanpa melihat waktu eksekusi atau {\it burst time} dan {\it deadline} dari masing-masing pekerjaan yang masuk.\newline
+		Tabel di atas menampilkan data hasil dari pengerjaan sebuah sistem {\it real time} yang mengurutkan dan mengerjakan pekerjaan yang ada dengan menggunakan metode penjadwalan {\it Round Robin}. Metode ini akan memberikan porsi {\it resource} CPU yang sama rata pada setiap pekerjaan yang masuk dan mengerjakan pekerjaan yang ada tanpa melihat waktu eksekusi atau {\it burst time} dan {\it deadline} dari masing-masing pekerjaan yang masuk.\newline
 	
 		Salah satu contoh dari penggunaan {\it real time system} adalah pada alat seismograf. Seismograf adalah sebuah alat yang berfungsi untuk mengukur dan mencatat data dari sebuah gempa bumi. Data yang tercatat akan direpresentasikan sebagai sebuah grafik yang nantinya akan diukur menggunakan pengukuran Skala bernama {\it skala richter}. Seismograf adalah salah satu alat yang menggunakan prinsip {\it real time system}. Hal ini dikarenakan seismograf tidak diperbolehkan untuk sedikit saja melakukan {\it delaying} pada saat pengambilan data yang dapat menyebabkan kegagalan manusia dalam memprediksi potensi gempa bumi berdasarkan data yang diberikan oleh seismograf tersebut. Hal ini adalah salah satu implementasi dari sistem {\it hard real time} dimana seismograf dibutuhkan untuk menyelesaikan sebuah pekerjaan yang sangat penting dengan jaminan waktu tertentu, dan jika waktu yang diberikan tidak terpenuhi maka seismograf tersebut terhitung gagal.\newpage
 		\begin{center}
@@ -103,33 +103,43 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan 
         \end{figure}
 		\end{center}
 		
-		Gambar diatas adalah salah satu contoh hasil data grafik yang dihasilkan oleh seismograf dan dinamakan seismogram. Seismogram adalah rekaman gerakan tanah yang berupa grafis aktivitas bumi. Seperti yang sudah dijelaskan diatas, grafik ini bersifat sangat peka waktu sehingga dapat dimasukkan ke dalam kategori sistem peka waktu.
+		Gambar di atas adalah salah satu contoh hasil data grafik yang dihasilkan oleh seismograf dan dinamakan seismogram. Seismogram adalah rekaman gerakan tanah yang berupa grafis aktivitas bumi. Seperti yang sudah dijelaskan di atas, grafik ini bersifat sangat peka waktu sehingga dapat dimasukkan ke dalam kategori {\it real time system}.
 		
 		(c) {\it Gantt Chart}\newline
 		Hasil dari pengerjaan sebuah proses dalam suatu sistem akan direpresentasikan dalam bentuk {\it Gantt Chart}. {\it Gantt Chart} adalah sebuah tipe chart yang mengilustrasikan sebuah penjadwalan kerja. {\it Gantt Chart} mengilustrasikan waktu mulai dan waktu selesai dari sebuah element dari proyek. Di dalam kasus {\it Real-time System, Gantt Chart} dapat digunakan untuk menunjukkan status dari sebuah pekerjaan menggunakan sebuah garis vertikal.
-% 		\begin{center}
-%         \begin{figure}[!htbp]
-%             \centering
-%             \includegraphics[scale=0.3]{gantt-chart.jpg}
-%             \caption{Contoh Implementasi Gantt Chart}
-%             \label{}
-%         \end{figure}
-% 		\end{center}
+		\begin{center}
+        \begin{figure}[!htbp]
+            \centering
+            \includegraphics[scale=0.5]{gantt-chart.jpg}
+            \caption{Contoh Implementasi {\it Gantt Chart}}
+            \label{}
+        \end{figure}
+		\end{center}
 		
-		\newpage
+		{\it Gantt Chart} di atas merepresentasikan sebuah penjadwalan kerja dari sebuah studi {\it benchmarking}, dimana pemilik {\it gantt chart} tersebut sedang merencanakan sebuah riset khussus dengan penjelasan sebagai berikut : 
+		\begin{enumerate}
+		\item Mengembangkan rencana dan memberikannya kepada dewan pada minggu ke 1
+		\item Mengidentifikasi tim untuk melakukan riset sesuai dengan rencana pada minggu ke 1,5 sampai dengan kurang lebih minggu 3
+		\item Melaksanakan proses identifikasi dan proses kunci lainnya pada minggu ke 4 sampai kurang lebih minggu ke 7
+		\item Mengambil, menganalisis, dan mengidentifikasi data dari publik serta mengunjungi {\it partner} dari pengembangan benchmark riset yang ada pada minggu ke 4,5 sampai kurang lebih minggu ke 9
+		\item Mengembangkan, finalisasi, dan mempresentasikan proses baru hasil riset yang ada pada kurang lebih minggu ke 8 sampai minggu ke 11
+		\end{enumerate}
 		
 		(d) Algoritma {\it Earliest Deadline First}\newline
 		{\it Earliest deadline first} adalah algoritma penjadwalan dinamis yang digunakan pada {\it real time system} untuk menempatkan pekerjaan dalam sebuah {\it priority queue}. Apabila ada penjadwalan baru yang muncul, maka {\it queue} akan mencari pekerjaan dengan tenggat waktu ({\it deadline}) paling dekat untuk selanjutnya akan dieksekusi terlebih dahulu. \newline
 		EDF memiliki algoritma penjadwalan yang optimal pada {\it uniprocessor preemptive}, dalam artian jika terdapat kumpulan pekerjaan independen, yang masing-masing mempunyai {\it arrival time dan tenggat waktu}, maka EDF akan menjadwalkannya agar mereka dapat diselesaikan sesuai dengan tenggat waktu mereka. Penjelasan lebih detilnya adalah sebagai berikut :\newline
-		Jika sebagai contoh, diketahui bahwa 2 buah pekerjaan (pekerjaan A dan pekerjaan B) yang ada di dalam sebuah sistem peka waktu memiliki waktu kedatangan yang sama dan batas waktu yang berbeda dimana B memiliki batas waktu yang lebih sedikit dibandingkan dengan A, maka sistem akan meningkatkan prioritas pekerjaan B agar dapat dikerjakan terlebih dahulu. Asumsi dari contoh ini adalah bahwa deadline yang ditetapkan oleh pekerjaan A dan B bersifat absolut yang berarti tidak akan berubah selama kedua pekerjaan tersebut berada di dalam sistem.\newline
+		Jika sebagai contoh, diketahui bahwa 2 buah pekerjaan (pekerjaan A dan pekerjaan B) yang ada di dalam sebuah {\it real time system} memiliki waktu kedatangan yang sama dan batas waktu yang berbeda dimana B memiliki batas waktu yang lebih sedikit dibandingkan dengan A, maka sistem akan meningkatkan prioritas pekerjaan B agar dapat dikerjakan terlebih dahulu. Asumsi dari contoh ini adalah bahwa deadline yang ditetapkan oleh pekerjaan A dan B bersifat absolut yang berarti tidak akan berubah selama kedua pekerjaan tersebut berada di dalam sistem.\newline
 		Dengan demikian, algoritma EDF dapat dirumuskan sebagai berikut :\newline
 		\begin{lstlisting}
 let a = array of task in priority queue with absolute deadline
-let newB = new task with absolute deadline
-for i=0 till length of a
-    if deadline of newB < a[i]
-    add newB before a[i]
-    move a[i] to a[i+1] 
+while a is not empty
+    take task at a[0] and execute
+    if there is a new job then
+        let newB = new task with absolute deadline
+        for i=0 till length of a
+            if deadline of newB < a[i]
+            add newB before a[i]
+            move a[i] to a[i+1] 
 		\end{lstlisting}
 		
 		\newpage
@@ -137,7 +147,7 @@ for i=0 till length of a
 		\item \textbf{Analisis Real Time System dan Algoritma Earliest Deadline First}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil : }\newline
-		Analisis sudah dilakukan dengan melihat cara kerja dari kode program yang mengimplementasikan metode penjadwalan {\it shortest remaining time first}. Metode ini diambil karena cara kerjanya hampir sama dengan algoritma {\it Earliest Deadline First}, dimana pekerjaan dengan batas waktu penyelesaian yang paling rendah akan dieksekusi terlebih dahulu oleh {\it real time system} yang menjalankannya. Program yang dianalisis adalah milik salah satu alumni Informatika UNPAR. {\it Detail} dari program ini adalah sebagai berikut : \newline
+		Analisis sudah dilakukan dengan melihat cara kerja dari kode program yang mengimplementasikan metode penjadwalan {\it shortest remaining time first}. Metode ini diambil karena cara kerjanya hampir sama dengan algoritma {\it Earliest Deadline First}, dimana pekerjaan dengan batas waktu penyelesaian yang paling rendah akan dieksekusi terlebih dahulu oleh {\it real time system} yang menjalankannya. Program yang dianalisis adalah milik salah satu alumni Informatika UNPAR bernama Devi Handevi dengan NPM 2013730015. {\it Detail} dari program ini adalah sebagai berikut : \newline
 		1. Program mempunyai 2 kelas utama yaitu kelas SRTFGUI.java dan SRTFThread.java\newline
 		2. SRTFGUI.java berfungsi untuk menampilkan antarmuka dari program yang dibuat. Kelas ini mempunyai beberapa {\it method} yang di-{\it generate} oleh pustaka milik bahasa  pemrograman {\it Java}. Adapun {\it method} yang dibuat sendiri adalah sebagai berikut (beserta penjelasannya):\newline
 		\begin{lstlisting}[language=Java]
@@ -158,7 +168,7 @@ String[] proses;
 for (int i = 0; i < n; i++) {
 proses = ss[i+1].split(" ");
 t.addProcess(proses[0], Integer.parseInt(proses[1]), Integer.parseInt(proses[2]));
-}//iterasi for diatas menambahkan proses sesuai //dengan jumlah proses dari masukan pengguna
+}//iterasi for di atas menambahkan proses sesuai //dengan jumlah proses dari masukan pengguna
         
 setName();//menetapkan nama proses
 t.start();//mengeksekusi thread
@@ -283,22 +293,31 @@ class ProcessComparator implements Comparator<Process> {
             \caption{Antarmuka program setelah dieksekusi}
             \label{}
         \end{figure}
-		\end{center} \newpage
+		\end{center}
+		{\it Gantt Chart} dari hasil program di atas adalah sebagai berikut (dimana sumbu X merepresentasikan {\it running time} dan sumbu Y merepresntasikan proses yang sedang berjalan) :
+		\begin{center}
+        \begin{figure}[!htbp]
+            \centering
+            \includegraphics{testcase1.png}
+            \caption{{\it Gantt Chart} dari hasil eksekusi program}
+            \label{}
+        \end{figure}
+		\end{center}
 		{\it Text field output} akan mengeluarkan hasil dari proses penjadwalan yang dilakukan. {\it Text field information} akan menampilkan nama dari proses yang masuk untuk selanjutnya dapat diidentifikasi di {\it Text field output}. Program juga akan mengeluarkan {\it average waiting time} dan {\it average turnaround time} berdasarkan masukan dari pengguna.\newline \newline
 		
-		Dengan demikian, program ini dapat menjadi acuan untuk selanjutnya saya dapat merancang perangkat lunak {\it real time system} dengan menggunakan algoritma {\it earliest deadline first} 
+		Dengan demikian, program ini dapat menjadi acuan untuk selanjutnya saya dapat merancang perangkat lunak {\it real time system} dengan menggunakan algoritma {\it earliest deadline first}
 		
 		\item \textbf{Merancang perangkat lunak dengan menggunakan algoritma {\it Earliest Deadline First}.}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil : Progress belum ada} 
 		
-		\item \textbf{Merancang perangkat lunak untuk mengimplementasikan {\it Real Time System} dengan menggunakan algoritma {\it Earliest Deadline First}}
+		\item \textbf{Merancang perangkat lunak untuk mengimplementasikan {\it Real Time System} dengan menggunakan algoritma {\it Earliest Deadline First}}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi.\\
 		{\bf Hasil : Progress belum ada} 
 		
 		\item \textbf{Menulis dokumen skripsi}\\
 		{\bf Status :} Ada sejak rencana kerja skripsi\\
-		{\bf Hasil : Menulis Bab 1, 2 , dan bab 3 (belum lengkap)} 
+		{\bf Hasil : }Menulis bab 1, 2 , dan bab 3 (belum lengkap) 
 		
 
 	\end{enumerate}
@@ -329,7 +348,11 @@ Keterangan (*)\\
 
 \section{Kendala yang dihadapi}
 %TULISKAN BAGIAN INI JIKA DOKUMEN ANDA TIPE A ATAU C
-Kendala - kendala yang dihadapi selama mengerjakan skripsi : -
+Kendala - kendala yang dihadapi selama mengerjakan skripsi : 
+\begin{enumerate}
+\item Terlalu banyak proyek eksternal di luar kampus
+\item Terlalu banyak bermain game dan hiburan lainnya
+\end{enumerate}
 
 \vspace{1cm}
 \centering Bandung, \tanggal\\
